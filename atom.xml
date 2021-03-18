@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>XYZ1024&#39;s Blog</title>
+  
+  <subtitle>A Blog</subtitle>
+  <link href="https://xyz1024.top/atom.xml" rel="self"/>
+  
+  <link href="https://xyz1024.top/"/>
+  <updated>2021-02-19T15:21:46.000Z</updated>
+  <id>https://xyz1024.top/</id>
+  
+  <author>
+    <name>XYZ1024</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FFmpeg的使用</title>
+    <link href="https://xyz1024.top/2021/02/19/ffmpeg/"/>
+    <id>https://xyz1024.top/2021/02/19/ffmpeg/</id>
+    <published>2021-02-19T15:21:46.000Z</published>
+    <updated>2021-02-19T15:21:46.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在WSL上使用FFmpeg&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Linux" scheme="https://xyz1024.top/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设置WSL2下的Ubuntu默认打开目录</title>
+    <link href="https://xyz1024.top/2021/02/18/wsl2mrml/"/>
+    <id>https://xyz1024.top/2021/02/18/wsl2mrml/</id>
+    <published>2021-02-17T18:24:47.000Z</published>
+    <updated>2021-02-17T18:24:47.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+    <category term="水文" scheme="https://xyz1024.top/tags/%E6%B0%B4%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>好耶事LaTeX</title>
+    <link href="https://xyz1024.top/2021/01/30/hao-ye-shi-Latex/"/>
+    <id>https://xyz1024.top/2021/01/30/hao-ye-shi-Latex/</id>
+    <published>2021-01-30T08:44:48.000Z</published>
+    <updated>2021-01-30T08:44:48.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;好耶事LaTeX&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="水文" scheme="https://xyz1024.top/tags/%E6%B0%B4%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rocky主题魔改记录</title>
+    <link href="https://xyz1024.top/2021/01/16/rocky/"/>
+    <id>https://xyz1024.top/2021/01/16/rocky/</id>
+    <published>2021-01-15T16:35:21.000Z</published>
+    <updated>2021-01-15T16:35:21.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Rocky主题魔改记录&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Gridea" scheme="https://xyz1024.top/tags/Gridea/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>不蒜子脚本</title>
+    <link href="https://xyz1024.top/2021/01/12/busuanzi/"/>
+    <id>https://xyz1024.top/2021/01/12/busuanzi/</id>
+    <published>2021-01-12T04:41:09.000Z</published>
+    <updated>2021-01-12T04:41:09.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;2021的第一篇文章&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="笔记" scheme="https://xyz1024.top/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个极草的东西</title>
+    <link href="https://xyz1024.top/2020/12/27/jicao/"/>
+    <id>https://xyz1024.top/2020/12/27/jicao/</id>
+    <published>2020-12-26T16:38:04.000Z</published>
+    <updated>2020-12-26T16:38:04.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+    <category term="水文" scheme="https://xyz1024.top/tags/%E6%B0%B4%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Microsoft官方生产工具——PowerToys</title>
+    <link href="https://xyz1024.top/2020/12/03/zG6Y4lAaI/"/>
+    <id>https://xyz1024.top/2020/12/03/zG6Y4lAaI/</id>
+    <published>2020-12-02T17:40:09.000Z</published>
+    <updated>2020-12-02T17:40:09.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;瞎逛Gayhub偶然发现微软有PowerToys的Repo，于是就发现了这个神器&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="工具" scheme="https://xyz1024.top/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git的网络问题</title>
+    <link href="https://xyz1024.top/2020/12/03/gitfix/"/>
+    <id>https://xyz1024.top/2020/12/03/gitfix/</id>
+    <published>2020-12-02T17:33:24.000Z</published>
+    <updated>2020-12-02T17:33:24.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决Gridea客户端打不开/打开很慢以及同步不了的问题</title>
+    <link href="https://xyz1024.top/2020/10/31/grideafix/"/>
+    <id>https://xyz1024.top/2020/10/31/grideafix/</id>
+    <published>2020-10-31T07:45:21.000Z</published>
+    <updated>2020-10-31T07:45:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+    <category term="Gridea" scheme="https://xyz1024.top/tags/Gridea/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一篇很普通的音乐鉴赏文章：《比较大的大提琴》</title>
+    <link href="https://xyz1024.top/2020/10/31/DDfJPUPLU/"/>
+    <id>https://xyz1024.top/2020/10/31/DDfJPUPLU/</id>
+    <published>2020-10-30T18:37:50.000Z</published>
+    <updated>2020-10-30T18:37:50.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;2 0 1 2&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="音乐" scheme="https://xyz1024.top/tags/%E9%9F%B3%E4%B9%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在WSL2上运行ArchLinux</title>
+    <link href="https://xyz1024.top/2020/10/31/wslarch/"/>
+    <id>https://xyz1024.top/2020/10/31/wslarch/</id>
+    <published>2020-10-30T17:45:17.000Z</published>
+    <updated>2020-10-30T17:45:17.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="https://xyz1024.top/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于周杰伦《琴伤》双放</title>
+    <link href="https://xyz1024.top/2020/10/23/mnhyvC4ZH/"/>
+    <id>https://xyz1024.top/2020/10/23/mnhyvC4ZH/</id>
+    <published>2020-10-23T10:20:29.000Z</published>
+    <updated>2020-10-23T10:20:29.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+    <category term="音乐" scheme="https://xyz1024.top/tags/%E9%9F%B3%E4%B9%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多线程下载器Neat Download Manager</title>
+    <link href="https://xyz1024.top/2020/08/21/ZChqytPsV/"/>
+    <id>https://xyz1024.top/2020/08/21/ZChqytPsV/</id>
+    <published>2020-08-21T04:23:20.000Z</published>
+    <updated>2020-08-21T04:23:20.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+    <category term="工具" scheme="https://xyz1024.top/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Netlify静态托管</title>
+    <link href="https://xyz1024.top/2020/08/21/NOX-UNjC-/"/>
+    <id>https://xyz1024.top/2020/08/21/NOX-UNjC-/</id>
+    <published>2020-08-21T03:19:18.000Z</published>
+    <updated>2020-08-21T03:19:18.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+    <category term="建站" scheme="https://xyz1024.top/tags/%E5%BB%BA%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>水群指南——在群里存活下去</title>
+    <link href="https://xyz1024.top/2020/07/31/9ETE6Asky/"/>
+    <id>https://xyz1024.top/2020/07/31/9ETE6Asky/</id>
+    <published>2020-07-31T13:57:19.000Z</published>
+    <updated>2020-07-31T13:57:19.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+    <category term="水文" scheme="https://xyz1024.top/tags/%E6%B0%B4%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>添加Gridea的Simple主题不自带的社交链接</title>
+    <link href="https://xyz1024.top/2020/07/11/sjlj/"/>
+    <id>https://xyz1024.top/2020/07/11/sjlj/</id>
+    <published>2020-07-11T06:26:29.000Z</published>
+    <updated>2020-07-11T06:26:29.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+    <category term="Gridea" scheme="https://xyz1024.top/tags/Gridea/"/>
+    
+  </entry>
+  
+</feed>

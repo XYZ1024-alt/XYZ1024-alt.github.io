@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>在WSL2上运行ArchLinux - XYZ1024&#39;s Blog</title>
+<link rel="shortcut icon" href="https://img.cncn3.cn/images/3pWV.png">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.cncn3.cn/webstatic/02f534954261b/tailwind.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/XYZ1024-alt/CDN@1.6/main.css">
+<link rel="alternate" type="application/atom+xml" title="XYZ1024&#39;s Blog - Atom Feed" href="https://xyz1024.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163801176-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', '[object Object]');
+  </script>
+ 
+
+<!--gray-->
+<!--<style type="text/css">
+  html {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  -webkit-filter: grayscale(100%);}
+</style>-->
+    <!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+    <body>
+        <div>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="/" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      XYZ1024&#39;s Blog
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          在WSL2上运行ArchLinux
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2020-10-31
+      </div>
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <p><strong>注：本文使用的并非Windows Store版本的ArchLinux</strong></p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="ArchLinux下载"><a href="#ArchLinux下载" class="headerlink" title="ArchLinux下载"></a>ArchLinux下载</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/yuk7/container-systemd-init-tool">https://github.com/yuk7/container-systemd-init-tool</a></p>
+</blockquote>
+<h2 id="开启WSL"><a href="#开启WSL" class="headerlink" title="开启WSL"></a>开启WSL</h2><blockquote>
+<p>控制面板–&gt;启用或关闭Windows功能–&gt;适用于Linux的Windows子系统</p>
+</blockquote>
+<h1 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>把下下来的压缩包放到你想放到的地方，Arch2.exe在哪个目录Arch就安装在哪里</p>
+<p>双击打开后等待安装，安装完后如果提示要用WSL2打开，就打开PowerShell，输入</p>
+<p><code>wsl --set-version arch2 2</code></p>
+<p>也可以把以后安装的发行版都默认安装为WSL2</p>
+<p><code>wsl --set-default-version 2</code></p>
+<h2 id="后续安装"><a href="#后续安装" class="headerlink" title="后续安装"></a>后续安装</h2><h3 id="添加普通用户"><a href="#添加普通用户" class="headerlink" title="添加普通用户"></a>添加普通用户</h3><p>安装完后只有一个root用户，为了安全，新添加一个普通用户<br>把用户添加到wheel组</p>
+<p><code>useradd -m -G wheel -s /bin/bash  [Username]</code></p>
+<p>设置密码</p>
+<p><code>passwd [Username]</code></p>
+<p>最后设置wheel组的用户能用sudo获取root权限，使用vim或者nano等文本编辑工具打开</p>
+<blockquote>
+<p>/etc/sudoers</p>
+</blockquote>
+<p>把</p>
+<blockquote>
+<p>#%wheel ALL=(ALL) ALL</p>
+</blockquote>
+<p>前的#去掉，再保存退出，使用su切换用户</p>
+<h3 id="更换国内源"><a href="#更换国内源" class="headerlink" title="更换国内源"></a>更换国内源</h3><p>这里推荐ArchLinuxcn源<a target="_blank" rel="noopener" href="https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/">传送门</a></p>
+<blockquote>
+<p>sudo vim /etc/pacman.d/mirrorlist</p>
+</blockquote>
+<p>把cn源放到最上面，再执行</p>
+<p><code>sudo pacman -Syyu</code></p>
+<p>更新软件包缓存</p>
+<p>之后安装 archlinuxcn-keyring 包导入 GPG key</p>
+<pre class="line-numbers language-none"><code class="language-none">pacman-key --init
+pacman-key --populate
+pacman -Syy &amp;&amp; pacman -S archlinuxcn-keyring<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="安装AUR助手"><a href="#安装AUR助手" class="headerlink" title="安装AUR助手"></a>安装AUR助手</h3><p>使用pacman不能安装，编译的话显示没权限，chmod也没用，暂时没有什么解决办法，先放着</p>
+<h3 id="切换-WSL-默认用户"><a href="#切换-WSL-默认用户" class="headerlink" title="切换 WSL 默认用户"></a>切换 WSL 默认用户</h3><p>使用cmd打开你安装Arch的目录</p>
+<pre class="line-numbers language-none"><code class="language-none">C:\Program Files\Arch&gt;Arch2.exe help
+Usage :
+    &lt;no args&gt;
+      - Open a new shell with your default settings.
+
+    run &lt;command line&gt;
+      - Run the given command line in that distro. Inherit current directory.
+
+    runp &lt;command line (includes windows path)&gt;
+      - Run the path translated command line in that distro.
+
+    config [setting [value]]
+      - &#96;--default-user &lt;user&gt;&#96;: Set the default user for this distro to &lt;user&gt;
+      - &#96;--default-uid &lt;uid&gt;&#96;: Set the default user uid for this distro to &lt;uid&gt;
+      - &#96;--append-path &lt;on|off&gt;&#96;: Switch of Append Windows PATH to $PATH
+      - &#96;--mount-drive &lt;on|off&gt;&#96;: Switch of Mount drives
+      - &#96;--default-term &lt;default|wt|flute&gt;&#96;: Set default terminal window
+
+    get [setting]
+      - &#96;--default-uid&#96;: Get the default user uid in this distro
+      - &#96;--append-path&#96;: Get on&#x2F;off status of Append Windows PATH to $PATH
+      - &#96;--mount-drive&#96;: Get on&#x2F;off status of Mount drives
+      - &#96;--wsl-version&#96;: Get WSL Version 1&#x2F;2 for this distro
+      - &#96;--default-term&#96;: Get Default Terminal for this distro launcher
+      - &#96;--lxguid&#96;: Get WSL GUID key for this distro
+
+    backup [contents]
+      - &#96;--tgz&#96;: Output backup.tar.gz to the current directory using tar command
+      - &#96;--reg&#96;: Output settings registry file to the current directory
+
+    clean
+      - Uninstall the distro.
+
+    help
+      - Print this usage message.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p> 执行</p>
+<p><code>Arch2.exe config --default-user [Username]</code></p>
+<h2 id="配置VSCode"><a href="#配置VSCode" class="headerlink" title="配置VSCode"></a>配置VSCode</h2><p>在VSCode中新建终端输入即可</p>
+<p><code>wsl -d arch2</code></p>
+<h1 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h1><p>Arch的安装到这里就结束了，如果有了AUR的解决办法会补充</p>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToQQ">
+            <i class="ri-qq-line"></i>
+          </div>
+          <!--<div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>-->
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      <div id="vlaine-comment"></div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://hexo.io/zh-cn/" target="_blank">Hexo</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/XYZ1024-alt/xyz1024-blog" target="_blank">仓库</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://xyz1024.top/atom.xml" target="_blank">RSS</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="page-toc-container" style="text-align: center; font-size: 20px;">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ArchLinux%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.1.</span> <span class="toc-text">ArchLinux下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%90%AFWSL"><span class="toc-number">1.2.</span> <span class="toc-text">开启WSL</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">开始安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%BB%AD%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.</span> <span class="toc-text">后续安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7"><span class="toc-number">2.2.1.</span> <span class="toc-text">添加普通用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E5%9B%BD%E5%86%85%E6%BA%90"><span class="toc-number">2.2.2.</span> <span class="toc-text">更换国内源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85AUR%E5%8A%A9%E6%89%8B"><span class="toc-number">2.2.3.</span> <span class="toc-text">安装AUR助手</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2-WSL-%E9%BB%98%E8%AE%A4%E7%94%A8%E6%88%B7"><span class="toc-number">2.2.4.</span> <span class="toc-text">切换 WSL 默认用户</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEVSCode"><span class="toc-number">2.3.</span> <span class="toc-text">配置VSCode</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E8%A8%80"><span class="toc-number">3.</span> <span class="toc-text">后言</span></a></li></ol>
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          
+    <script type="application/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'E431NYCbnLgTzuug9HYtEd6G-gzGzoHsz',
+    appKey: '9KPHEMSKrR5e389ERRcMi1Kd',
+    pageSize: 10,
+    notify: false,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '来都来了，不妨评论一下',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+    visitor: true
+  })
+</script>
+   
+
+  <!-- Code Highlight -->
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/XYZ1024-alt/CDN/prism-atom-dark.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.6.0/build/highlight.min.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/XYZ1024-alt/CDN/photo.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/XYZ1024-alt/CDN/main.js"></script>
+
+        </div>
+    </body>
+</html>

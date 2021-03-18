@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>XYZ1024&#39;s Blog</title>
+<link rel="shortcut icon" href="https://img.cncn3.cn/images/3pWV.png">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.cncn3.cn/webstatic/02f534954261b/tailwind.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/XYZ1024-alt/CDN@1.6/main.css">
+<link rel="alternate" type="application/atom+xml" title="XYZ1024&#39;s Blog - Atom Feed" href="https://xyz1024.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163801176-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', '[object Object]');
+  </script>
+ 
+
+<!--gray-->
+<!--<style type="text/css">
+  html {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  -webkit-filter: grayscale(100%);}
+</style>-->
+    <!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+    <body>
+        <div>
+            <div class="antialiased flex flex-col min-h-screen" id="app">
+
+  <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
+    
+      <a href="/archives/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
+    
+      <a href="/tags/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
+    
+      <a href="/friends/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        友链
+      </a>
+    
+      <a href="/about/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+      <a href="https://xyz1024.xyz/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        主页
+      </a>
+     
+    <!--<a href="/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>-->
+    <!--<div class="gridea-search-container">
+      <form id="gridea-search-form" action="https://xyz1024.top/search/">
+        <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索...">
+      </form>
+    </div>-->
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto">
+        <header class="flex py-16 md:py-32 mt-12 flex-col md:flex-row px-4 md:px-0 animated fadeIn">
+  <div class="flex-1 order-2 md:order-1 md:pr-16">
+    <div class="text-4xl font-bold text-center md:text-left">
+      XYZ1024&#39;s Blog
+    </div>
+    <div class="text-xl text-gray-500 mt-4 text-center md:text-left">
+      
+    </div>
+    
+    
+      <div class="mt-8 flex items-center">
+        
+          <div class="text-gray-500 mr-2">
+            联系我👉
+          </div>
+        
+        
+          
+        
+          
+            
+              <a href="mailto:i@xyz1024.xyz" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-mail-line"></i>
+              </a>
+            
+          
+        
+          
+            
+              <a href="https://github.com/XYZ1024-alt" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-github-line"></i>
+              </a>
+            
+          
+        
+          
+            
+              <a href="https://twitter.com/H3XV5erSza24q07" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-twitter-line"></i>
+              </a>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+              <a href="https://t.me/jhx1024" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-telegram-line"></i>
+              </a>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+              <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=486483978&amp;site=qq&amp;menu=yes" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-qq-line"></i>
+              </a>
+            
+          
+        
+          
+            
+              <a href="https://www.youtube.com/channel/UCah3OwYu9aIX2O08lK6ZS9Q?view_as=subscriber?sub_confirmation=1" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-youtube-line"></i>
+              </a>
+            
+          
+        
+          
+        
+      </div>
+    
+  </div>
+  <div class="md:mx-8 flex-shrink-0 self-start rounded-full border-4 border-dotted border-transparent hover:border-yellow-50 p-2 w-32 h-32 order-1 md:order-2 mx-auto s3-dotted">
+    <img class="rounded-full object-cover" src="http://img.cncn3.cn/images/3pWV.png" alt="XYZ1024&#39;s Blog" width="100%" height="100%">
+  </div>
+</header>
+
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="/2020/10/31/wslarch/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          在WSL2上运行ArchLinux
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020/10/31</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+      </div>
+      <a href="/2020/10/31/wslarch/" class="btn">
+        阅读更多
+      </a>
+    </div>
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="/2020/10/23/mnhyvC4ZH/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          关于周杰伦《琴伤》双放
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020/10/23</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+      </div>
+      <a href="/2020/10/23/mnhyvC4ZH/" class="btn">
+        阅读更多
+      </a>
+    </div>
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="/2020/08/21/ZChqytPsV/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          多线程下载器Neat Download Manager
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020/8/21</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+      </div>
+      <a href="/2020/08/21/ZChqytPsV/" class="btn">
+        阅读更多
+      </a>
+    </div>
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="/2020/08/21/NOX-UNjC-/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          使用Netlify静态托管
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020/8/21</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+      </div>
+      <a href="/2020/08/21/NOX-UNjC-/" class="btn">
+        阅读更多
+      </a>
+    </div>
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="/2020/07/31/9ETE6Asky/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          水群指南——在群里存活下去
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020/7/31</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+      </div>
+      <a href="/2020/07/31/9ETE6Asky/" class="btn">
+        阅读更多
+      </a>
+    </div>
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="/2020/07/11/sjlj/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          添加Gridea的Simple主题不自带的社交链接
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020/7/11</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+      </div>
+      <a href="/2020/07/11/sjlj/" class="btn">
+        阅读更多
+      </a>
+    </div>
+  </div>
+
+
+
+  
+      </div>
+
+      <div class="my-4 flex justify-between px-4 md:px-0">
+  
+    <a href="/" class="btn btn-white">
+      <i class="ri-arrow-left-line mr-4"></i>
+      上一页
+    </a>
+  
+  
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://hexo.io/zh-cn/" target="_blank">Hexo</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/XYZ1024-alt/xyz1024-blog" target="_blank">仓库</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://xyz1024.top/atom.xml" target="_blank">RSS</a>
+</footer>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/XYZ1024-alt/CDN/main.js"></script>
+        </div>
+    </body>
+</html>
