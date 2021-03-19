@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>about - XYZ1024&#39;s Blog</title>
+<title>不蒜子脚本 - XYZ1024&#39;s Blog</title>
 <link rel="shortcut icon" href="https://img.cncn3.cn/images/3pWV.png">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.cncn3.cn/webstatic/02f534954261b/tailwind.css">
@@ -41,31 +41,49 @@
     <div class="max-w-4xl w-full mx-auto">
       <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
         <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
-          about
+          不蒜子脚本
         </h1>
         
         <div class="mb-8 flex flex-wrap">
-          <div class="text-gray-400 text-sm mr-4">2021-03-17
+          <div class="text-gray-400 text-sm mr-4">2021-01-12
       </div>
         </div>
         <div class="markdown mb-8" v-pre>
-          <p>本站使用的主题为Rocky，移植自Gridea，经过原作者许可，如果你是我的朋友并想用这个主题的话，请联系我</p>
-<p><strong>联系方式</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center"><i class="ri-qq-line"></i> QQ</th>
-<th align="center"><i class="ri-mail-line"></i> E-Mail</th>
-<th align="center"><i class="ri-telegram-line"></i> Telegram</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1321489801</td>
-<td align="center"><a href="mailto:i@xyz1024.xyz">XYZ1024</a></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://t.me/jhx1024">XYZ1024</a></td>
-</tr>
-</tbody></table>
-<p><a target="_blank" rel="noopener" href="https://xyz1024.xyz/">个人主页</a></p>
+          <p>2021的第一篇文章</p>
+<span id="more"></span>
+
+<p>因为我站访问量太低了，所以用Python写了个脚本来刷访问量</p>
+<pre class="line-numbers language-none"><code class="language-none">from threading import Thread
+import requests
+
+#以下内容皆需抓包
+url &#x3D; &#39;https:&#x2F;&#x2F;busuanzi.ibruce.info&#x2F;busuanzi?jsonpCallback&#x3D;BusuanziCallback_337040561039&#39;
+headers &#x3D; &#123;
+    &#39;Origin&#39;: &#39;https:&#x2F;&#x2F;xyz1024.top&#x2F;&#39;,
+    &#39;Referer&#39;: &#39;https:&#x2F;&#x2F;xyz1024.top&#x2F;&#39;,
+    &#39;User-Agent&#39;: &#39;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;87.0.4280.66 Safari&#x2F;537.36&#39; #除了这个
+&#125;
+
+def count(i):
+    try:
+        r &#x3D; requests.get(url&#x3D;url, headers&#x3D;headers, timeout&#x3D;3)
+        if r.status_code &#x3D;&#x3D; 200:
+            print(&#39;成功&#39;)
+        else:
+            return None
+    except:
+        pass
+
+def main():
+    for i in range(100): #在这输入刷的次数
+        t &#x3D; Thread(target&#x3D;count, args&#x3D;(i, ))
+        t.start()
+
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    main()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/XYZ1024-alt/Counter/tree/main">Github</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=-E6zhPcsPkE">Youtube</a></p>
 
         </div>
         <!-- Share to Twitter, Weibo, Telegram -->

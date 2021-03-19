@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>about - XYZ1024&#39;s Blog</title>
+<title>解决Gridea客户端打不开/打开很慢以及同步不了的问题 - XYZ1024&#39;s Blog</title>
 <link rel="shortcut icon" href="https://img.cncn3.cn/images/3pWV.png">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.cncn3.cn/webstatic/02f534954261b/tailwind.css">
@@ -41,31 +41,30 @@
     <div class="max-w-4xl w-full mx-auto">
       <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
         <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
-          about
+          解决Gridea客户端打不开/打开很慢以及同步不了的问题
         </h1>
         
         <div class="mb-8 flex flex-wrap">
-          <div class="text-gray-400 text-sm mr-4">2021-03-17
+          <div class="text-gray-400 text-sm mr-4">2020-10-31
       </div>
         </div>
         <div class="markdown mb-8" v-pre>
-          <p>本站使用的主题为Rocky，移植自Gridea，经过原作者许可，如果你是我的朋友并想用这个主题的话，请联系我</p>
-<p><strong>联系方式</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center"><i class="ri-qq-line"></i> QQ</th>
-<th align="center"><i class="ri-mail-line"></i> E-Mail</th>
-<th align="center"><i class="ri-telegram-line"></i> Telegram</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1321489801</td>
-<td align="center"><a href="mailto:i@xyz1024.xyz">XYZ1024</a></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://t.me/jhx1024">XYZ1024</a></td>
-</tr>
-</tbody></table>
-<p><a target="_blank" rel="noopener" href="https://xyz1024.xyz/">个人主页</a></p>
+          <p>最近Gridea客户端打开很慢，而且同步也经常失败</p>
+<p>在左上角，编辑–&gt;开发者工具–&gt;console，可以看到<strong>widget.js</strong>加载不出，这是因为cdn.headwayapp.co被墙了，所以需要使用魔法或者把widget.js放到其它CDN</p>
+<p>如果换到其它CDN的话，需要对客户端修改</p>
+<blockquote>
+<p>\Gridea\resources\app\index.html</p>
+</blockquote>
+<p>对index.html进行编辑</p>
+<p>搜索</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://cdn.headwayapp.co/widget.js">https://cdn.headwayapp.co/widget.js</a></p>
+</blockquote>
+<p>换成新的地址</p>
+<p>下面是我的</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/XYZ1024-alt/CDN/widget.js">https://cdn.jsdelivr.net/gh/XYZ1024-alt/CDN/widget.js</a></p>
+</blockquote>
 
         </div>
         <!-- Share to Twitter, Weibo, Telegram -->
